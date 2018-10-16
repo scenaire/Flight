@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
 html, body {
   width: 100%;
-  height: 100%
-  padding: 0;
+  height: 100% padding: 0;
   margin: 0px;
 }
 
@@ -15,20 +16,30 @@ body {
 
 .sub-content {
   width: 100%;
-  max-width : 850px;
+  max-width: 850px;
   background-color: white;
   padding: 30px;
   margin: auto;
 }
 
-.sub-content label{
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
+.tab-content .table-hover .price {
+  color: #0069D9;
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 60px;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
 }
 
-.sub-content p {
-  font-size: 12px;
-  font-weight: 600;
+.tab-content .table-hover .currency {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #414141;
   text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: bottom;
 }
