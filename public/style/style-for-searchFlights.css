@@ -1,0 +1,130 @@
+/***********************************************************
+                        General
+***********************************************************/
+
+html, body {
+  width: 100%;
+  height: 100%
+  padding: 0;
+  margin: 0px;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url("/static/images/bg1.jpeg");
+  background-repeat: no-repeat;
+
+}
+
+/***********************************************************
+                    Container
+***********************************************************/
+.main-content {
+  width: 100%;
+  max-width : 850px;
+  background-color: white;
+  padding: 30px;
+  margin: auto;
+}
+
+.main-content label{
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main-content p {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main-content input[type=text] {
+  background: transparent;
+  border : none;
+  border-bottom: 1px solid #f9676b;
+  color : #f9676b;
+}
+
+.main-content input:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+
+#radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+
+
+
+/***********************************************************
+                    Date Picker
+***********************************************************/
+
+#ui-datepicker-div {
+	background: #fff;
+	z-index: 9999 !important;
+}
+#ui-datepicker-div  table {
+	margin: 10px;
+}
+.ui-datepicker-calendar a {
+	padding: 5px;
+	color: #000;
+}
+.ui-datepicker-calendar a:hover {
+	color: #f9676b;
+}
+.ui-datepicker-calendar td {
+	padding: 10px 5px;
+}
+.ui-datepicker-calendar .ui-state-disabled {
+	color: #0A3152;
+}
+.ui-datepicker-calendar th {
+	color: #f9676b;
+	padding: 7px;
+}
+.ui-datepicker-header {
+	margin: 10px;
+}
+.ui-datepicker-header .ui-datepicker-title {
+	color: #f9676b;
+	text-align: center;
+}
+.ui-datepicker-header a {
+	color: #000;
+	cursor: pointer;
+}
+.ui-datepicker-header a:hover {
+	color: #f9676b;
+}
+.ui-spinner-up i {
+	color: #BEC4C8;
+	float: right;
+	margin-top: -27px;
+	margin-right: 10px;
+	z-index: 99999;
+}
+.ui-spinner-down i {
+	color: #BEC4C8;
+	float: left;
+	margin-top: -27px;
+	margin-left: 10px;
+	z-index: 99999;
+}
+.quantity-padding {
+	padding-left: 40px !important;
+}
+.ui-datepicker-prev {
+	float: left;
+}
+.ui-datepicker-next {
+	float: right;
+}

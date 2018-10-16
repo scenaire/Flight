@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/static/style/style-for-searchFlights.css" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+  <title>Search Flight</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <form name="form" onsubmit="">
+      <div class="main-content">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="flyfrom">Origin</label><br />
+              <input type="text" class="form-control" name="origin" placeholder=""/>
+            </div>
+            <div class="form-group">
+              <label for="depart">Departing</label><br />
+              <input type="text" class="form-control" id="depart" placeholder="DD/MM/YYYY"/>
+            </div>
+            <div class="form-group">
+              <label for="adult">Adult</label>
+              <select>
+                <option>1</option>
+              </select><br />
+              <label for="adult">Child</label>
+              <select>
+                <option>1</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="flyto">Destination</label><br />
+              <input type="text" class="form-control" name="destination" placeholder=""/>
+
+            </div>
+            <div class="form-group">
+              <div class="return">
+                <label for="depart">Returning</label><br />
+                <input type="text" class="form-control" id="return" placeholder="DD/MM/YYYY"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="adult">Cabin</label><br />
+              <select class="from-control" name="cabin" id="cabin">
+                <option>Economy Class</option>
+                <option>Business Class</option>
+                <option>First Class</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="radioBtn" class="btn-group">
+             <a class="btn btn-primary btn-sm active" data-toggle="happy" data-title="one">One Way</a>
+             <a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="round">Round Trip</a>
+           </div>
+            <br /><br /><button type="button" class="btn btn-primary" id="search">Search!</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="sub-content">
+
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#depart').datepicker({ dateFormat: 'dd/mm/yy' }).val();
+      $('#return').datepicker({ dateFormat: 'dd/mm/yy' }).val();
+
+      $('#radioBtn a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+
+
+  })
+
+    $('#search').on('click', function() {
+      $('#sub-content').load("displayFlight.html");
+    })
+
+    } );
+
+  </script>
+
+
+
+</body>
+
+</html>
