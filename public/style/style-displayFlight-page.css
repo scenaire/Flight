@@ -18,8 +18,12 @@ body {
   width: 100%;
   max-width: 850px;
   background-color: white;
-  padding: 30px;
+  padding: 10px;
   margin: auto;
+}
+
+.shownumber {
+  color: #0069D9;
 }
 
 .table-hover .price {
@@ -69,6 +73,13 @@ body {
   font-weight: 600;
   color: #414141;
   text-transform: uppercase;
+}
+
+.table-hover .plusday {
+  font-family: "Lato",sans-serif;
+  color: #414141;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .table-hover img {
