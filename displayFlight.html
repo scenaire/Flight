@@ -34,7 +34,7 @@
         </div>
         <div id="matrixview" class="container tab-pane active"><br>
           <p>3 of 3 shown - one way</p>
-          <table class="table table-hover">
+          <table class="table table-hover" id="myTable">
             <thead>
               <tr>
                 <th>Price</th>
@@ -52,33 +52,54 @@
                 <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
                 <td><span class="duration">5 Hour 45 Minute</span> <br /><span class="airportcity">Direct flight</span></td>
               </tr>
-              <tr>
-                <td><span class="price">23,990</span> <span class="currency">thb</span> </td>
-                <td><img src="https://www.wegointer.com/wp-content/uploads/2018/04/japan.jpg" /></td>
-                <td><span class="time">08:00</span> <br /> <span class="airportcity">Bangkok (BKK)</span></td>
-                <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
-                <td><span class="duration">5 Hour 45 Minute</span> <br /><span class="airportcity">Direct flight</span></td>
-              </tr>
-              <tr>
-                <td><span class="price">23,990</span> <span class="currency">thb</span> </td>
-                <td><img src="http://www.singaporeair.com/saar5/images/logo-footer-singaporeairlines.png" /></td>
-                <td><span class="time">08:00</span> <br /> <span class="airportcity">Bangkok (BKK)</span></td>
-                <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
-                <td><span class="duration">1 Day 5 Hour 45 Minute</span> <br /><span class="airportcity">1 Stop</span></td>
-              </tr>
+
             </tbody>
           </table>
           <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function(){
+      $.get("https://api.myjson.com/bins/up7og", function(data, status) {
+        if (status == "success") {
+          var row = data.length;
+          /*var roww = 0;
+          for (var i=0; i<row; i++) {
+            if (data[i].airline == "Thai Airways") {
+              roww++;
+            }
+          }
+          row = roww;*/
+
+          /***********************************************************
+                              Table
+          ***********************************************************/
+      $("#myTable tr:last").after();
+
+          /***********************************************************
+                              pagination
+          ***********************************************************/
+          if (row>3) {
+            var countpage = row/3;
+            $(".pagination").append('<li class="page-item"><a class="page-link" href="#">Previous</a></li>');
+            for (var i=0; i<countpage; i++) {
+              if (i==0) {
+                $(".pagination").append('<li class="page-item active"><a class="page-link" href="#">'+(i+1)+'</a></li>');
+              } else {
+                $(".pagination").append('<li class="page-item"><a class="page-link" href="#">'+(i+1)+'</a></li>');
+              }
+            }
+            $(".pagination").append('<li class="page-item"><a class="page-link" href="#">Next</a></li>');
+          }
+        }
+      });
+    });
+  </script>
 
 
 </body>

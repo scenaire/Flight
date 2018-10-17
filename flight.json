@@ -1,4 +1,4 @@
-[
+{"flight": [
   {
     "origin": "bangkok (BKK)",
     "destination": "tokyo (NRT)",
@@ -66,3 +66,4 @@
     "stop": 1
   }
 ]
+}

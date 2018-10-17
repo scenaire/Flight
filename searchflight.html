@@ -99,11 +99,7 @@
   })
 
     $('#search').on('click', function() {
-      $.get("https://api.myjson.com/bins/up7og", function(data, status) {
-        if (status == "success") {
           $('#sub-content').load("displayFlight.html");
-        }
-      });
     });
 
     });

@@ -46,8 +46,8 @@ body {
 .main-content input[type=text] {
   background: transparent;
   border : none;
-  border-bottom: 1px solid #f9676b;
-  color : #f9676b;
+  border-bottom: 1px solid ;
+  color : #0069D9;
 }
 
 .main-content input:focus {
@@ -79,7 +79,7 @@ body {
 	color: #000;
 }
 .ui-datepicker-calendar a:hover {
-	color: #f9676b;
+	color: #0069D9;
 }
 .ui-datepicker-calendar td {
 	padding: 10px 5px;
@@ -88,14 +88,14 @@ body {
 	color: #0A3152;
 }
 .ui-datepicker-calendar th {
-	color: #f9676b;
+	color: #0069D9;
 	padding: 7px;
 }
 .ui-datepicker-header {
 	margin: 10px;
 }
 .ui-datepicker-header .ui-datepicker-title {
-	color: #f9676b;
+	color: #0069D9;
 	text-align: center;
 }
 .ui-datepicker-header a {
@@ -103,7 +103,7 @@ body {
 	cursor: pointer;
 }
 .ui-datepicker-header a:hover {
-	color: #f9676b;
+	color: #0069D9;
 }
 .ui-spinner-up i {
 	color: #BEC4C8;
