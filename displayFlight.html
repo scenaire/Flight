@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="style-displayFlight-page.css" />
 
   <title>Display Flight</title>
+  <div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
 </head>
 
 <body>
@@ -22,28 +23,63 @@
   <div class="container mt-3">
     <div class="sub-content">
       <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#listview">List View</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#matrixview">Matrix View</a></li>
-    </ul>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#listview">List View</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#matrixview">Matrix View</a></li>
+      </ul>
 
 
-    <div class="tab-content">
-      <div id="listview" class="container tab-pane active"><br>
-        <table class="table table-hover">
-      <thead>
-        <tr> <th>Price</th> <th>Airline</th> <th>Take-off</th> <th>Landing</th> <th>Stop (Duration)</th> </tr>
-      </thead>
-      <tbody>
-        <tr> <td><span class="price">590</span>  <span class="currency">Baht</span></td> <td>Doe</td> <td>Doe</td> <td>Doe</td> <td>john@example.com</td> </tr>
-      </tbody>
-    </table>
-      </div>
-      <div id="matrixview" class="container tab-pane fade"><br>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="tab-content">
+        <div id="listview" class="container tab-pane fade"><br>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="matrixview" class="container tab-pane active"><br>
+          <p>3 of 3 shown - one way</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Price</th>
+                <th>Airline</th>
+                <th>Departure time</th>
+                <th>Arrival time</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="price">23,990</span> <span class="currency">thb</span> </td>
+                <td><img src="https://u.imageresize.org/v2/536d3079-1f72-4e95-b3c7-fdde1efccd30.png" /></td>
+                <td><span class="time">08:00</span> <br /> <span class="airportcity">Bangkok (BKK)</span></td>
+                <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
+                <td><span class="duration">5 Hour 45 Minute</span> <br /><span class="airportcity">Direct flight</span></td>
+              </tr>
+              <tr>
+                <td><span class="price">23,990</span> <span class="currency">thb</span> </td>
+                <td><img src="https://www.wegointer.com/wp-content/uploads/2018/04/japan.jpg" /></td>
+                <td><span class="time">08:00</span> <br /> <span class="airportcity">Bangkok (BKK)</span></td>
+                <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
+                <td><span class="duration">5 Hour 45 Minute</span> <br /><span class="airportcity">Direct flight</span></td>
+              </tr>
+              <tr>
+                <td><span class="price">23,990</span> <span class="currency">thb</span> </td>
+                <td><img src="http://www.singaporeair.com/saar5/images/logo-footer-singaporeairlines.png" /></td>
+                <td><span class="time">08:00</span> <br /> <span class="airportcity">Bangkok (BKK)</span></td>
+                <td><span class="time">15:50</span> <br /> <span class="airportcity">Tokyo (NRT)</span></td>
+                <td><span class="duration">1 Day 5 Hour 45 Minute</span> <br /><span class="airportcity">1 Stop</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    </div>
-</div>
+  </div>
+
 
 </body>
 

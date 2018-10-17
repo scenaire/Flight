@@ -22,24 +22,66 @@ body {
   margin: auto;
 }
 
-.tab-content .table-hover .price {
+.table-hover .price {
   color: #0069D9;
   font-family: "Lato", sans-serif;
   font-size: 35px;
   font-weight: 300;
   letter-spacing: -2px;
-  line-height: 60px;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-  vertical-align: middle;
 }
 
-.tab-content .table-hover .currency {
+.table-hover .currency {
   font-family: "Lato", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   color: #414141;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  vertical-align: bottom;
 }
+
+.table-hover th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #414141;
+  text-transform: uppercase;
+}
+
+.table-hover .time {
+  font-family: "Lato",sans-serif;
+  color: #414141;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+.table-hover .airportcity {
+  font-size: 12px;
+  font-weight: 600;
+  color: #949494;
+  text-transform: uppercase;
+}
+
+.table-hover .duration {
+  font-size: 12px;
+  font-weight: 600;
+  color: #414141;
+  text-transform: uppercase;
+}
+
+.table-hover img {
+  height: 50px;
+  width: auto;
+}
+
+.nav .nav-tabs {
+
+}
+
+.pagination {
+  justify-content: center;
+}
+
+#loadOverlay{display: none;}

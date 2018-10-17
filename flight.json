@@ -1,0 +1,68 @@
+[
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "16,990",
+    "airline": "Thai Airways",
+    "airlinelogo": "https://u.imageresize.org/v2/536d3079-1f72-4e95-b3c7-fdde1efccd30.png",
+    "departure": "08:00",
+    "arrival": "15:50",
+    "duration": "5 hours 50 minutes",
+    "stop": 0
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "16,990",
+    "airline": "Thai Airways",
+    "airlinelogo": "https://u.imageresize.org/v2/536d3079-1f72-4e95-b3c7-fdde1efccd30.png",
+    "departure": "14:50",
+    "arrival": "22:30",
+    "duration": "5 hours 40 minutes",
+    "stop": 0
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "23,990",
+    "airline": "Japan Airline",
+    "airlinelogo": "https://www.wegointer.com/wp-content/uploads/2018/04/japan.jpg",
+    "departure": "08:15",
+    "arrival": "16:05",
+    "duration": "5 hours 50 minutes",
+    "stop": 1
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "23,990",
+    "airline": "Japan Airline",
+    "airlinelogo": "https://www.wegointer.com/wp-content/uploads/2018/04/japan.jpg",
+    "departure": "23:25",
+    "arrival": "07:15 (+1 day)",
+    "duration": "5 hours 50 minutes",
+    "stop": 1
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "11,000",
+    "airline": "Singapore Airline",
+    "airlinelogo": "http://www.singaporeair.com/saar5/images/logo-footer-singaporeairlines.png",
+    "departure": "12:15",
+    "arrival": "13:35 (+1 day)",
+    "duration": "1 Day 1 hours 20 minutes",
+    "stop": 1
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
+    "price": "10,900",
+    "airline": "Singapore Airline",
+    "airlinelogo": "http://www.singaporeair.com/saar5/images/logo-footer-singaporeairlines.png",
+    "departure": "18:30",
+    "arrival": "15:35 (+1 day)",
+    "duration": "19 hours 5 minutes",
+    "stop": 1
+  }
+]
