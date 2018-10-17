@@ -37,7 +37,7 @@
           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div id="matrixview" class="container tab-pane active"><br>
-          <p><span class="shownumber">3</span> of 3 shown - one way</p>
+          <p><span class="shownumber" id="shownumber">3</span> of 3 shown - one way</p>
           <table class="table table-hover" id="myTable">
             <thead>
               <tr>
@@ -64,11 +64,7 @@
       $.get("https://api.myjson.com/bins/12cfuw", function(data, status) {
         if (status == "success") {
           var row = data.length;
-          var countpage = row / 3;
-          var modulopage = row % 3;
-          if (modulopage != 0) {
-            countpage + 1
-          };
+          var countpage = Math.ceil(row / 3);
 
           /***********************************************************
                               For Select
@@ -82,50 +78,6 @@
           }
           row = roww;*/
 
-
-
-          /***********************************************************
-                              Table
-          ***********************************************************/
-
-          for (var i = 0; i < 3; i++) {
-            var stops;
-            switch (data[i].stop) {
-              case 1:
-                stops = 1 + " Stop";
-                break;
-              case (data[i].stop > 1):
-                stops = data[i].stop + " Stops";
-                break;
-              default:
-                stops = "Direct Flight";
-            }
-
-            var plusdays;
-            switch (data[i].plusday) {
-              case 1:
-                plusdays = "(+" + 1 + " day)";
-                break;
-              case (data[i].plusday > 1):
-                lusdays = "(+" + data[i].plusday + " days)";
-                break;
-              default:
-                plusdays = null;
-            }
-
-            var price = '<span class="price">' + data[i].price + '</span> <span class="currency">thb</span>'
-            var logo = '<img src="' + data[i].airlinelogo + '" />';
-            var departtime = '<span class="time">' + data[i].departure + '</span> <br /> <span class="airportcity">' + data[i].origin + '</span>';
-            if (plusdays != null) {
-              var arrivetime = '<span class="time">' + data[i].arrival + '</span> <span class="plusday">' + plusdays + '</span> <br /> <span class="airportcity">' + data[i].destination + '</span>'
-            } else {
-              var arrivetime = '<span class="time">' + data[i].arrival + '</span> <br /> <span class="airportcity">' + data[i].destination + '</span>'
-            }
-            var durationSt = '<span class="duration">' + data[i].duration + '</span> <br /><span class="airportcity">' + stops + '</span>'
-            $("#myTable tr:last").after('<tr><td>' + price + '</td><td>' + logo + '</td><td>' + departtime + '</td><td>' + arrivetime + '</td><td>' + durationSt + '</td></tr>');
-
-          }
-
           /***********************************************************
                               pagination
           ***********************************************************/
@@ -133,17 +85,13 @@
             $(".pagination").append('<li class="prev"><a class="page-link" href="#">Previous</a></li>');
             for (var i = 0; i < countpage; i++) {
               if (i == 0) {
-                $(".pagination").append('<li class="page-item active"><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+                $(".pagination").append('<li id="p' + (i + 1) + '" class="page-item active"><a class="page-link">' + (i + 1) + '</a></li>');
               } else {
-                $(".pagination").append('<li class="page-item"><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+                $(".pagination").append('<li id="p' + (i + 1) + '" class="page-item"><a class="page-link">' + (i + 1) + '</a></li>');
               }
             }
             $(".pagination").append('<li class="next"><a class="page-link" href="#">Next</a></li>');
           }
-
-          /***********************************************************
-                              Event
-          ***********************************************************/
 
           var pageItem = $(".pagination li").not(".prev,.next");
           var prev = $(".pagination li.prev");
@@ -161,6 +109,73 @@
           prev.click(function() {
             $('li.active').removeClass('active').prev().addClass('active');
           });
+
+          /***********************************************************
+                              Table
+          ***********************************************************/
+
+          var i = 0;
+          addTable(i);
+
+          $("#p1").click(function() {
+            i = 0;
+            $("tbody").empty();
+            addTable(i);
+          });
+          $("#p2").click(function() {
+            i = 3;
+            $("tbody").empty();
+            addTable(i);
+            i = 0;
+          });
+          $("#p3").click(function() {
+            i = 6;
+            $("tbody").empty();
+            addTable(i);
+            i = 0;
+          });
+
+          function addTable(i) {
+            var endpage = i + 3;
+
+            for (i; i < endpage; i++) {
+              var stops;
+              switch (data[i].stop) {
+                case 1:
+                  stops = 1 + " Stop";
+                  break;
+                case (data[i].stop > 1):
+                  stops = data[i].stop + " Stops";
+                  break;
+                default:
+                  stops = "Direct Flight";
+              }
+
+              var plusdays;
+              switch (data[i].plusday) {
+                case 1:
+                  plusdays = "(+" + 1 + " day)";
+                  break;
+                case (data[i].plusday > 1):
+                  lusdays = "(+" + data[i].plusday + " days)";
+                  break;
+                default:
+                  plusdays = null;
+              }
+
+              var price = '<span class="price">' + data[i].price + '</span> <span class="currency">thb</span>'
+              var logo = '<img src="' + data[i].airlinelogo + '" />';
+              var departtime = '<span class="time">' + data[i].departure + '</span> <br /> <span class="airportcity">' + data[i].origin + '</span>';
+              if (plusdays != null) {
+                var arrivetime = '<span class="time">' + data[i].arrival + '</span> <span class="plusday">' + plusdays + '</span> <br /> <span class="airportcity">' + data[i].destination + '</span>'
+              } else {
+                var arrivetime = '<span class="time">' + data[i].arrival + '</span> <br /> <span class="airportcity">' + data[i].destination + '</span>'
+              }
+              var durationSt = '<span class="duration">' + data[i].duration + '</span> <br /><span class="airportcity">' + stops + '</span>'
+              $("#myTable > tbody").append('<tr><td>' + price + '</td><td>' + logo + '</td><td>' + departtime + '</td><td>' + arrivetime + '</td><td>' + durationSt + '</td></tr>');
+            }
+
+          }
 
         }
       });
