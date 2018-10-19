@@ -14,6 +14,18 @@
   {
     "origin": "bangkok (BKK)",
     "destination": "tokyo (NRT)",
+    "price": "15,990",
+    "airline": "Thai Airways",
+    "airlinelogo": "https://u.imageresize.org/v2/536d3079-1f72-4e95-b3c7-fdde1efccd30.png",
+    "departure": "12:50",
+    "arrival": "20:30",
+    "plusday" : 0,
+    "duration": "5 hours 40 minutes",
+    "stop": 0
+  },
+  {
+    "origin": "bangkok (BKK)",
+    "destination": "tokyo (NRT)",
     "price": "16,990",
     "airline": "Thai Airways",
     "airlinelogo": "https://u.imageresize.org/v2/536d3079-1f72-4e95-b3c7-fdde1efccd30.png",

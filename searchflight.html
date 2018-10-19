@@ -29,7 +29,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="flyfrom">Origin</label><br />
-              <input type="text" class="form-control" name="origin" placeholder="Origin"/>
+              <input type="text" class="form-control" id="origin" name="origin" placeholder="Origin"/>
             </div>
             <div class="form-group">
               <label for="depart">Departing</label><br />
@@ -49,7 +49,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="flyto">Destination</label><br />
-              <input type="text" class="form-control" name="destination" placeholder="Destination"/>
+              <input type="text" class="form-control" id="destination" name="destination" placeholder="Destination"/>
 
             </div>
             <div class="form-group">
@@ -86,7 +86,7 @@
     $(document).ready(function() {
       $('#depart').datepicker({ dateFormat: 'dd/mm/yy' }).val();
       $('#return').datepicker({ dateFormat: 'dd/mm/yy' }).val();
-
+      
       $('#radioBtn a').on('click', function(){
     var sel = $(this).data('title');
     var tog = $(this).data('toggle');
