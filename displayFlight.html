@@ -34,7 +34,7 @@
           <p id="maw">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div id="matrixview" class="container tab-pane active"><br>
-          <p><span class="shownumber" id="shownumber"></span> of 3 shown - <span id="tripp">one way</span></p>
+          <p><span class="shownumber" id="shownumber"></span> of <span id="totalData"></span> shown - <span id="tripp">one way</span></p>
           <table class="table table-hover" id="myTable">
             <thead>
               <tr>
@@ -60,28 +60,31 @@
     $(document).ready(function() {
       $.get("https://api.myjson.com/bins/k9yf4", function(data, status) {
         if (status == "success") {
-          
+
           /***********************************************************
                               For Select
           ***********************************************************/
-          
+
           var row = 0;
 
           var origin = $('#origin').val().toLowerCase();
           var destination = $('#destination').val().toLowerCase();
-          
+
           tempo = [];
-          
+
           for (var j=0; j<data.length; j++) {
             if (data[j].origin.slice(0,-6) == origin && data[j].destination.slice(0,-6) == destination) {
               row++;
               tempo.push(data[j]);
             }
           }
-          
+
           data = tempo;
-          
-          
+
+          $("#totalData").text(row);
+          delete tempo;
+
+
           var countpage = Math.ceil(row / 3);
 
           /***********************************************************
@@ -155,11 +158,11 @@
             var endpage;
             if (page != countpage) {
               endpage = i + 3;
-              $("#shownumber").text('3');
             } else {
               endpage = (data.length - i) + i;
-              $("#shownumber").text((data.length-i).toString());
             }
+
+            $("#shownumber").text(endpage);
 
             for (i; i < endpage; i++) {
               var stops;
